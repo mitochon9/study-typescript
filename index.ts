@@ -188,3 +188,46 @@ const isUserB = (user: UserA | UserB): user is UserB => {
 
 // const japanese = users.filter(isUserA);
 // const notJapanese = users.filter(isUserB);
+
+// Generics（型の決定を遅延できるもの）
+// export type User<T> = {
+//   name: string;
+//   state: T;
+// };
+
+// type Japanese = User<"東京都" | "大阪府">;
+// type American = User<"CA" | "NY">;
+
+// const user1: Japanese = {
+//   name: "田中",
+//   state: "東京都",
+// };
+
+// const user2: American = {
+//   name: "Johnny",
+//   state: "CA",
+// };
+
+// export type Foo<T extends string | number = string> = {
+//   value: T;
+// };
+
+// const foo1: Foo = {
+//   value: "",
+// };
+// const foo2: Foo<number> = {
+//   value: 111,
+// };
+
+// const foo = <T extends string | number>(arg: T) => {
+//   if (typeof arg === "string") {
+//     return {
+//       value: arg.toUpperCase(),
+//     };
+//   }
+//   return { value: arg.toFixed() };
+// };
+
+// const foo1 = foo<string>("");
+// const foo2 = foo(1);
+// const foo3 = foo([false]);
