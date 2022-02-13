@@ -31,6 +31,46 @@
 // }
 
 //double assertion（あまり使うべきではない）
-export function getFirstLetter(str: number) {
-  return (str as unknown as string).charAt(0);
-}
+// export function getFirstLetter(str: number) {
+//   return (str as unknown as string).charAt(0);
+// }
+
+// インデックスシグネチャー（あまり多用しないほうがいい）
+// export type User = {
+//   name: string;
+//   age: number;
+//   [key: string]: string | number | undefined;
+// };
+
+// const user: User = {
+//   name: "shinji",
+//   age: 20,
+//   account: "mitochon",
+//   job: "Software Engineer",
+// };
+
+// user.account;
+
+// Mapped Types（）
+// export type User = {
+//   name: string;
+// } & Required<PersonalData>;
+
+// type PersonalData = {
+//   height: number;
+//   weight: number;
+//   realName: string;
+//   // [K in "height" | "weight"]?: number | string;
+// };
+
+// type RequirePersonalData = {
+//   [K in keyof PersonalData]-?: PersonalData[K];
+//   // height?: number|undefined;
+//   // weight?: number|undefined;
+// };
+
+// const user: User = {
+//   name: "shinji",
+//   height: 174,
+//   weight: 60,
+// };
