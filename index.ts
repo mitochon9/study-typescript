@@ -74,3 +74,80 @@
 //   height: 174,
 //   weight: 60,
 // };
+
+// Type Guard
+// typeofを使った型ガード
+// export const foo = (value: string | number | boolean) => {
+//   if (typeof value === "string") {
+//     return value;
+//   }
+//   if (typeof value === "number") {
+//     return value;
+//   }
+//   return value;
+// };
+
+// 演算子を使った型ガード
+// export const foo = (value: string | string[]) => {
+//   if (Array.isArray(value)) {
+//     return value;
+//   }
+//   return value;
+// };
+
+// export const foo = (value?: string) => {
+//   if (!value) {
+//     return;
+//   }
+//   return value;
+// };
+
+// type UserA = {
+//   name: string;
+// };
+// type UserB = {
+//   name: string;
+//   nickName: string;
+// };
+
+// export const foo = (value: UserA | UserB) => {
+//   if ("nickName" in value) {
+//     return value;
+//   }
+//   return value;
+// };
+
+// type UserA = {
+//   name: string;
+//   lang: "ja";
+// };
+// type UserB = {
+//   name: string;
+//   lang: "en";
+// };
+// type UserC = {
+//   name: string;
+//   lang: "fr";
+// };
+
+// export const foo = (value: UserA | UserB | UserC) => {
+//   switch (value.lang) {
+//     case "ja": {
+//       return value;
+//     }
+//     case "en": {
+//       return value;
+//     }
+//     case "fr": {
+//       return value;
+//     }
+//     default: {
+//       throw Error("lang is not defined!");
+//     }
+//   }
+
+// if (value.lang === "ja") {
+//   return value;
+// }
+// return value;
+// };
